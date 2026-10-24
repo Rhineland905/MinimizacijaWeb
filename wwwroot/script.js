@@ -62,8 +62,8 @@ minimiziraj.addEventListener("click", async function () {
         rezultat.textContent = "Greška: " + poruka;
         return;
     }
-    rezultat.style.backgroundColor = "none";      
-    rezultat.style.border = "none";      
+    rezultat.style.backgroundColor = "#14171c;";      
+    rezultat.style.border = "#14171c;";      
     rezultat.style.color = "#9aa3af;";   
     rezultat.style.borderRadius = "0px"; 
     // 2. ispisati
