@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimizacija logičkih izraza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Minimizacija logičkih izraza</h1>
+    <p>Upiši logički izraz i dobit ćeš njegov najkraći oblik.</p>
+    <div id="minimizirajTab">
+        <input type="text" id="input">
+        <button id="minimiziraj">Minimiziraj</button><br>
+        <button id="i">& (I)</button>
+        <button id="ili">| (ILI)</button>
+        <button id="ne">! (NE)</button>
+        <button id="otvorena">(</button>
+        <button id="zatvorena">)</button>
+        <p>Varijable: velika slova A–Z (najviše 6), konstante 0 i 1. Primjer: (A & B) | (A & !B) | (!A & B)</p>
+    </div>
+    <div id="rezultatTab">
+        <div id="rezultat"></div>
+        <table id="tablica"></table>
+    </div>
+
+    <!-- .NET u pregledniku: ucitava C# kod (PM_minimizacija.cs) -->
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

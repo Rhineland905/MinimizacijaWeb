@@ -1,0 +1,165 @@
+/* ===== Stranica ===== */
+body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 16px;
+    background-color: #14171c;
+    color: #e6e8eb;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+body > p {
+    margin: 0 0 24px;
+    color: #9aa3af;
+    font-size: 16px;
+}
+
+/* ===== Kartica ===== */
+#minimizirajTab {
+    background-color: #1d2128;
+    border: 1px solid #333a44;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Polje za unos ===== */
+#input {
+    width: calc(100% - 140px);
+    height: 44px;
+    padding: 0 14px;
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    background-color: #14171c;
+    border: 1px solid #333a44;
+    border-radius: 10px;
+    color: #e6e8eb;
+    font-family: Consolas, "Cascadia Mono", monospace;
+    font-size: 18px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+#input::placeholder {
+    color: #5c6470;
+}
+
+#input:focus {
+    outline: none;
+    border-color: #5b8cff;
+    box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.25);
+}
+
+/* ===== Svi gumbi ===== */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.15s, border-color 0.15s, transform 0.05s;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* ===== Gumb Minimiziraj ===== */
+#minimiziraj {
+    width: 128px;
+    height: 44px;
+    margin-left: 6px;
+    vertical-align: middle;
+
+    background-color: #5b8cff;
+    color: #0b1020;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#minimiziraj:hover {
+    background-color: #7aa2ff;
+}
+
+/* ===== Gumbi za operatore ===== */
+#i, #ili, #ne, #otvorena, #zatvorena {
+    min-width: 44px;
+    height: 34px;
+    margin: 16px 3px 0;
+    padding: 0 14px;
+
+    background-color: #14171c;
+    color: #e6e8eb;
+    border: 1px solid #333a44;
+    border-radius: 999px;
+    font-family: Consolas, "Cascadia Mono", monospace;
+    font-size: 14px;
+}
+
+#i:hover, #ili:hover, #ne:hover, #otvorena:hover, #zatvorena:hover {
+    border-color: #5b8cff;
+    background-color: #1a2238;
+}
+
+/* ===== Uputa ispod gumba ===== */
+#minimizirajTab p {
+    margin: 18px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #2a3039;
+    color: #9aa3af;
+    font-size: 14px;
+}
+
+/* ===== Rezultat ===== */
+#rezultat {
+    text-align: center;
+    font-family: Consolas, "Cascadia Mono", monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: #7ee2a8;          /* zelena = uspjeh */
+}
+
+/* ===== Tablica istinitosti ===== */
+#tablica {
+    margin: 20px auto 0;     /* auto lijevo i desno = sredina */
+    border-collapse: collapse;
+    font-family: Consolas, "Cascadia Mono", monospace;
+    font-size: 15px;
+    border-radius: 10px;
+    overflow: hidden;        /* da se vide zaobljeni kutovi */
+    border: 1px solid #333a44;
+}
+
+#tablica th,
+#tablica td {
+    padding: 8px 18px;
+    text-align: center;
+    border: 1px solid #2a3039;
+}
+
+#tablica th {
+    background-color: #14171c;
+    color: #9aa3af;
+    font-weight: 600;
+}
+
+/* stupac Y (zadnji) */
+#tablica th:last-child,
+#tablica td:last-child {
+    background-color: #1a2238;
+    color: #5b8cff;
+    font-weight: 700;
+}
+
+#rezultatTab{
+    margin-top: 30px;
+}
+
