@@ -34,9 +34,19 @@ zatvorena.addEventListener("click",function(){
 
 
 
+// Postavi klasu (uspjeh / greska) i ponovno pokreni CSS animaciju.
+// Bez "offsetWidth" preglednik ne bi ponovio animaciju ako je klasa ista kao prije.
+function prikazi(klasa, tekst) {
+    rezultat.classList.remove("uspjeh", "greska");
+    void rezultat.offsetWidth;
+    rezultat.textContent = tekst;
+    if (klasa) rezultat.classList.add(klasa);
+}
+
 minimiziraj.addEventListener("click", async function () {
-    rezultat.textContent = "...";
+    prikazi("", "...");
     tablica.innerHTML = "";
+    minimiziraj.classList.add("racuna");
 
     let podaci;
 
@@ -46,28 +56,21 @@ minimiziraj.addEventListener("click", async function () {
     } catch (e) {
         let poruka = String(e.message || e);
 
-        rezultat.style.backgroundColor = "#3a1616";      
-        rezultat.style.border = "1px solid #ff9a91";      
-        rezultat.style.color = "#ff9a91";   
-        rezultat.style.borderRadius = "10px";    
- 
-
         if (typeof DotNet === "undefined" || poruka.includes("No .NET call dispatcher")) {
             // .NET se jos ucitava
-            rezultat.textContent = "Učitavanje... pokušaj ponovno za sekundu.";
+            prikazi("greska", "Učitavanje... pokušaj ponovno za sekundu.");
             return;
         }
         // C# greska izgleda kao "System.FormatException: tekst\n   at ..." - uzmi samo tekst
         poruka = poruka.split("\n")[0].replace(/^[\w.]+Exception:\s*/, "");
-        rezultat.textContent = "Greška: " + poruka;
+        prikazi("greska", "Greška: " + poruka);
         return;
+    } finally {
+        minimiziraj.classList.remove("racuna");
     }
-    rezultat.style.backgroundColor = "";
-    rezultat.style.border = "";
-    rezultat.style.color = "";
-    rezultat.style.borderRadius = "";
+
     // 2. ispisati
-    rezultat.textContent = podaci.rezultat;
+    prikazi("uspjeh", podaci.rezultat);
 
     // tablica istinitosti
     let n = podaci.varijable.length;
@@ -77,7 +80,7 @@ minimiziraj.addEventListener("click", async function () {
 
     podaci.izlazi.forEach(function (y, i) {
         let bitovi = i.toString(2).padStart(n, "0");
-        html += "<tr>";
+        html += "<tr style='--i:" + (i + 1) + "'>";   // --i = redni broj za kasnjenje animacije
         for (let b of bitovi) html += "<td>" + b + "</td>";
         html += "<td>" + (y ? 1 : 0) + "</td></tr>";
     });
