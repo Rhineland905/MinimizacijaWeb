@@ -1,4 +1,4 @@
-/* ===== Stranica ===== */
+/*  Stranica  */
 body {
     max-width: 720px;
     margin: 0 auto;
@@ -22,7 +22,7 @@ body > p {
     font-size: 16px;
 }
 
-/* ===== Kartica ===== */
+/*  Kartica  */
 #minimizirajTab {
     background-color: #1d2128;
     border: 1px solid #333a44;
@@ -32,7 +32,7 @@ body > p {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-/* ===== Polje za unos ===== */
+/*  Polje za unos  */
 #input {
     width: calc(100% - 140px);
     height: 44px;
@@ -59,7 +59,7 @@ body > p {
     box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.25);
 }
 
-/* ===== Svi gumbi ===== */
+/*  Svi gumbi  */
 button {
     cursor: pointer;
     font-family: inherit;
@@ -70,7 +70,7 @@ button:active {
     transform: translateY(1px);
 }
 
-/* ===== Gumb Minimiziraj ===== */
+/*  Gumb Minimiziraj  */
 #minimiziraj {
     width: 128px;
     height: 44px;
@@ -89,7 +89,7 @@ button:active {
     background-color: #7aa2ff;
 }
 
-/* ===== Gumbi za operatore ===== */
+/* Gumbi za operatore */
 #i, #ili, #ne, #otvorena, #zatvorena {
     min-width: 44px;
     height: 34px;
@@ -109,7 +109,7 @@ button:active {
     background-color: #1a2238;
 }
 
-/* ===== Uputa ispod gumba ===== */
+/*  Uputa ispod gumba  */
 #minimizirajTab p {
     margin: 18px 0 0;
     padding-top: 16px;
@@ -118,23 +118,23 @@ button:active {
     font-size: 14px;
 }
 
-/* ===== Rezultat ===== */
+/*  Rezultat  */
 #rezultat {
     text-align: center;
     font-family: Consolas, "Cascadia Mono", monospace;
     font-size: 22px;
     font-weight: 600;
-    color: #7ee2a8;          /* zelena = uspjeh */
+    color: #7ee2a8;         
 }
 
-/* ===== Tablica istinitosti ===== */
+/*  Tablica istinitosti  */
 #tablica {
-    margin: 20px auto 0;     /* auto lijevo i desno = sredina */
+    margin: 20px auto 0;     
     border-collapse: collapse;
     font-family: Consolas, "Cascadia Mono", monospace;
     font-size: 15px;
     border-radius: 10px;
-    overflow: hidden;        /* da se vide zaobljeni kutovi */
+    overflow: hidden;       
     border: 1px solid #333a44;
 }
 
@@ -165,19 +165,16 @@ button:active {
 
 
 
-/* =====================================================================
-   ANIMACIJE (cyber / glitch stil)
-   ===================================================================== */
+/* ANIMACIJE */
 
 :root {
-    --akcent: #5b8cff;       /* plava */
-    --sjena: #ff4d6d;        /* crvena za glitch */
-    --cijan: #00e5ff;        /* cijan za glitch */
-    /* "treperenje" kao kod neonske lampe koja se pali */
+    --akcent: #5b8cff;      
+    --sjena: #ff4d6d;       
+    --cijan: #00e5ff;        
     --treperi: linear(0, 0.2 6%, 0 14%, 0.5 21%, 0.4 38%, 0.8 60%, 0.95 62%, 1 68%, 0.5 70%, 0.9 97%, 0.7 99%, 1);
 }
 
-/* ----- Mreža u pozadini ----- */
+/*  Mreža u pozadini  */
 body::before {
     content: "";
     position: fixed;
@@ -190,7 +187,7 @@ body::before {
     mask: linear-gradient(-20deg, transparent 45%, #fff);
 }
 
-/* ----- Naslov: crta ispod se "iscrta" ----- */
+/*  Naslov: crta ispod se "iscrta"  */
 h1 {
     position: relative;
     display: inline-block;
@@ -213,7 +210,7 @@ body > p {
     animation: pojavi-se 0.4s ease-out 0.7s both;
 }
 
-/* ----- Kartica: uleti s lijeva + bočna neonska traka ----- */
+/*  Kartica: uleti s lijeva + bočna neonska traka  */
 #minimizirajTab {
     position: relative;
     animation: otkrij 0.45s ease-out 0.15s both;
@@ -232,7 +229,7 @@ body > p {
     animation: neon 0.6s var(--treperi) 0.4s both;
 }
 
-/* ----- Gumb Minimiziraj: glitch kad mišem prijeđeš preko ----- */
+/*  Gumb Minimiziraj: glitch kad mišem prijeđeš preko  */
 #minimiziraj {
     position: relative;
 }
@@ -269,7 +266,7 @@ body > p {
     animation: puls 0.6s ease-in-out infinite alternate;
 }
 
-/* ----- Rezultat: uspjeh ----- */
+/*  Rezultat: uspjeh  */
 #rezultat.uspjeh {
     animation:
         otkrij 0.35s ease-out both,
@@ -277,7 +274,7 @@ body > p {
     text-shadow: 0 0 12px rgba(126, 226, 168, 0.45);
 }
 
-/* ----- Rezultat: greška (crveno + trešnja) ----- */
+/*  Rezultat: greška (crveno + trešnja)  */
 #rezultat.greska {
     padding: 12px 16px;
     background-color: #3a1616;
@@ -289,17 +286,17 @@ body > p {
     animation: glitch-tresi 0.5s steps(1) both;
 }
 
-/* ----- Tablica: redovi ulaze jedan za drugim ----- */
+/*  Tablica: redovi ulaze jedan za drugim  */
 #tablica tr {
     animation: red-udi 0.3s ease-out both;
     animation-delay: calc(var(--i, 0) * 45ms + 0.2s);
 }
 
-/* =================== keyframes =================== */
+/*  keyframes  */
 
 @keyframes otkrij {
     from { clip-path: inset(0 100% 0 -40px); }
-    to   { clip-path: inset(-40px); }   /* -40px: da sjena i neonska traka ne budu odrezane */
+    to   { clip-path: inset(-40px); }   
 }
 
 @keyframes iscrtaj {
@@ -327,7 +324,6 @@ body > p {
     to   { box-shadow: 0 0 0 6px rgba(91, 140, 255, 0); }
 }
 
-/* naslov zatitra jednom kad se stranica učita */
 @keyframes glitch-tekst {
     0%   { text-shadow: -3px 0 var(--sjena), 3px 0 var(--cijan); translate: -2px 0; }
     20%  { text-shadow: 3px 0 var(--sjena), -3px 0 var(--cijan); translate: 2px 0; clip-path: inset(20% 0 40% 0); }
@@ -337,7 +333,6 @@ body > p {
     100% { text-shadow: none; translate: 0 0; clip-path: none; }
 }
 
-/* dva sloja gumba režu se na trake i pomiču u suprotnim smjerovima */
 @keyframes glitch-a {
     0%   { clip-path: inset(0 0 85% 0);  translate: -3px 0; }
     10%  { clip-path: inset(40% 0 40% 0); translate: 3px 0; }
@@ -356,7 +351,7 @@ body > p {
     100% { clip-path: inset(0 0 100% 0); translate: 0 0; }
 }
 
-/* greška: blok se "potrga" na trake i zatrese */
+
 @keyframes glitch-tresi {
     0%   { clip-path: inset(0 0 60% 0);  translate: -8px 0; text-shadow: -2px 0 var(--cijan); }
     12%  { clip-path: inset(50% 0 10% 0); translate: 8px 0;  text-shadow: 2px 0 var(--sjena); }
@@ -368,7 +363,6 @@ body > p {
     100% { clip-path: inset(0); translate: 0 0; }
 }
 
-/* ako korisnik u sustavu isključi animacije - poštuj to */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation: none !important;
